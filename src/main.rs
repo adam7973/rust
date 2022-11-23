@@ -5,7 +5,7 @@ use std::path::Path;
 mod morris;
 
 fn main() {
-
+    s0030_morris();
 }
 
 fn s0027_files() {
@@ -25,11 +25,14 @@ fn s0027_files() {
 fn s0030_morris() {
     let mut me = morris::Morris::new();
     for _i in 1..1001 {
-        if me.sleepiness > 50 {
-            me.sleep()
-        } else if me.thirst > 50 {
+        if _i > 997 {
+            me.mine();
+        }
+        if me.sleepiness > 94 {
+            me.sleep();
+        } else if me.thirst > 94 {
             me.drink();
-        } else if me.hunger > 50 {
+        } else if me.hunger > 94 {
             me.eat();
         } else if me.whisky == 0 && me.gold > 0 {
             me.buy_whisky();
