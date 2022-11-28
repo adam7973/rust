@@ -1,5 +1,7 @@
 use std::fmt;
 
+#[allow(dead_code)]
+
 pub struct Morris {
     pub sleepiness: i32,
     pub thirst: i32,

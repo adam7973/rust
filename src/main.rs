@@ -3,11 +3,11 @@ use std::io::Write;
 use std::path::Path;
 
 mod morris;
+mod pyramid;
 
-fn main() {
-    s0030_morris();
-}
+fn main() {}
 
+#[allow(dead_code)]
 fn s0027_files() {
     let mydata = "Hi,\nthis is a text file.\nIt has 3 rows.\n";
     let myfile = Path::new("input01.txt");
@@ -22,6 +22,7 @@ fn s0027_files() {
     }
 }
 
+#[allow(dead_code)]
 fn s0030_morris() {
     let mut me = morris::Morris::new();
     for _i in 1..1001 {
@@ -41,4 +42,11 @@ fn s0030_morris() {
         }
     }
     println!("{}", me)
+}
+
+#[allow(dead_code)]
+fn pyramid() {
+    let start = "1 1";
+    let lines = 10;
+    pyramid::pyramid2(lines, start)
 }
