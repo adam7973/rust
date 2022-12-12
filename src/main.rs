@@ -1,13 +1,19 @@
+#![allow(dead_code)]
 use std::fs;
 use std::io::Write;
 use std::path::Path;
 
+use animal::{Dog, Animal};
+
 mod morris;
 mod pyramid;
+mod rpg;
+mod animal;
 
-fn main() {}
+fn main() {
+    s0075_animal();
+}
 
-#[allow(dead_code)]
 fn s0027_files() {
     let mydata = "Hi,\nthis is a text file.\nIt has 3 rows.\n";
     let myfile = Path::new("input01.txt");
@@ -22,7 +28,6 @@ fn s0027_files() {
     }
 }
 
-#[allow(dead_code)]
 fn s0030_morris() {
     let mut me = morris::Morris::new();
     for _i in 1..1001 {
@@ -44,7 +49,20 @@ fn s0030_morris() {
     println!("{}", me)
 }
 
-#[allow(dead_code)]
+fn s0075_animal() {
+    let bird = Animal::new(String::from("Bird"), String::from("chirp"), 12.2, 1.2, 2, true);
+    println!("{}", bird);
+    bird.make_noise();
+    let waffie = Dog::new(String::from("Waffie"), 40.0, 7.2, 5, true, 5.8, false);
+    let woof = Dog::new(String::from("Woof"), 45.0, 7.3, 6, false, 7.6, true);
+    println!("{}", waffie);
+    println!("{}", woof);
+    waffie.wag_tail();
+    let woofie = waffie.mate(&woof).expect("woops");
+    println!("{}", woofie)
+
+}
+
 fn pyramid() {
     let start = "1 1";
     let lines = 10;
